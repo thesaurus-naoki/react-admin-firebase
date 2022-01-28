@@ -51,7 +51,10 @@ export function filtersToQuery(
   filters: { [fieldName: string]: any }
 ): Query {
   Object.keys(filters).forEach((fieldName) => {
-    query = query.where(fieldName, '==', filters[fieldName]);
+    query =
+      fieldName === ''
+        ? query
+        : query.where(fieldName, '==', filters[fieldName]);
   });
   return query;
 }
