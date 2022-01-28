@@ -50,11 +50,11 @@ export function filtersToQuery(
   query: Query,
   filters: { [fieldName: string]: any }
 ): Query {
-  Object.keys(filters).forEach((fieldName) => {
-    query = fieldName.startsWith('IGNORE_')
-      ? query
-      : query.where(fieldName, '==', filters[fieldName]);
-  });
+  // Object.keys(filters).forEach((fieldName) => {
+  //   query = fieldName.startsWith('IGNORE_')
+  //     ? query
+  //     : query.where(fieldName, '==', filters[fieldName]);
+  // });
   return query;
 }
 
