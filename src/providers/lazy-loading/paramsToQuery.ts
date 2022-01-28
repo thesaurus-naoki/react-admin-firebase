@@ -52,7 +52,7 @@ export function filtersToQuery(
 ): Query {
   Object.keys(filters).forEach((fieldName) => {
     query =
-      fieldName === ''
+      fieldName === 'IGNORE'
         ? query
         : query.where(fieldName, '==', filters[fieldName]);
   });
